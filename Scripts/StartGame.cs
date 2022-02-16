@@ -8,8 +8,9 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour
 {
     public AudioSource beginAudio;      //背景音频
-    public AudioSource startAudio;
+    public AudioSource startAudio;      //心跳声音
     public Image beakground;      //背景图片
+    public Image black;     //视角滤镜
     public Text text;       //向导文本
     public Text titleText;      //标题文本
     public Text titleText1;      //标题文本
@@ -52,18 +53,20 @@ public class StartGame : MonoBehaviour
     //开始游戏
     public void StartGames()
     {
-        DOTween.PauseAll();
-        beginAudio.Pause();
-        startAudio.Play();
-        text.DOFade(0,4);
-        titleText.DOFade(0, 4);
-        titleText1.DOFade(0, 4);
-        author.DOFade(0, 4);
-        beakground.transform.DOMoveY(7.2f, 5);
-        Invoke("LoadingScence", 5);
+        DOTween.PauseAll();     //停止背景缩放动画
+        beginAudio.Pause();     //停止背景音乐
+        startAudio.Play();      //播放心跳音乐
+        black.DOFade(1f, 6);      //加载滤镜
+        text.DOFade(0,4);       //文字消失
+        titleText.DOFade(0, 4);     //文字消失
+        titleText1.DOFade(0, 4);        //文字消失
+        author.DOFade(0, 4);        //文字消失
+        beakground.transform.DOMoveY(7.2f, 5);      //画面移动
+        Invoke("LoadingScence", 5);     //延迟加载场景
         //StartCoroutine(AsyncLoading());
-        Debug.Log("进入下一个场景");
+        Debug.Log("进入下一个场景");       //控制台输出
     }
+    //异步加载场景
     IEnumerator AsyncLoading()
     {
         //异步加载场景
@@ -92,6 +95,7 @@ public class StartGame : MonoBehaviour
 
         }
     }
+    //直接场景加载
     void LoadingScence()
     {
         SceneManager.LoadScene(1);
