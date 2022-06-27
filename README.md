@@ -4,7 +4,7 @@
 
 当然你也可以复制我的相关代码来实现自己的功能，或者`fork`之后二次开发，如有侵犯原作者，可以联系我删除。
 
-相关示例和演示效果可以查看我的博客：[世界毁灭后（游戏Demo）](https://helloseraphine.top/index.php/archives/450.html)
+相关示例和演示效果可以查看我的博客：[世界毁灭后（游戏Demo）](https://www.helloseraphine.top/2022/05/23/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/Unity/%E4%B8%96%E7%95%8C%E6%AF%81%E7%81%AD%E5%90%8E/)
 
 # 相关版本
 
